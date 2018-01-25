@@ -1,0 +1,349 @@
+[ 2018-01-04T18:14:12+08:00 ] ::1 /cloud/index.php/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+NOTIC: [8] Undefined variable: current D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\f0f0edaa955fd2857dedea53d1ab9ca3.php 第 7 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.084924s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084999s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000647s ]
+
+[ 2018-01-04T18:14:12+08:00 ] ::1 /cloud/index.php/Admin/login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000399s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000733s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000795s ]
+
+[ 2018-01-04T18:14:21+08:00 ] ::1 /cloud/index.php/Admin/login/verify.html?1515060861551
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000829s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000960s ]
+
+[ 2018-01-04T18:14:22+08:00 ] ::1 /cloud/index.php/Admin/login/verify.html?1515060862659
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000760s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000656s ]
+
+[ 2018-01-04T18:14:26+08:00 ] ::1 /cloud/index.php/Admin/login/verify.html?1515060866521
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000643s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000697s ]
+
+[ 2018-01-04T18:14:30+08:00 ] ::1 /cloud/index.php/Admin/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0227s ]
+SQL: SELECT `uid`,`user`,`org_id`,`h_id` FROM `cloud_member` WHERE `user` = '1234' AND `password` = 'b3c89ea6161f66de5e2bfccfda5ed3e4' LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\LoginController.class.php 第 51 行.
+SQL: SHOW COLUMNS FROM `cloud_log` [ RunTime:0.0434s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Common\function.php 第 12 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0035s ]
+SQL: SELECT `user` FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `cloud_log` (`name`,`t`,`ip`,`log`) VALUES ('1234','1515060870','::1','登录成功。') [ RunTime:0.0004s ]
+
+[ 2018-01-04T18:14:31+08:00 ] ::1 /cloud/index.php/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0438s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Index/index' [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0026s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SELECT SUM(s.num) AS nums, o.org_id, o.h_id, s.*, m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums DESC [ RunTime:0.0786s ]
+SQL: SELECT SUM(nums) nums FROM(SELECT SUM(s.num) AS nums, o.org_id, o.h_id, s.*, m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums DESC LIMIT 5,30) AS A [ RunTime:0.0017s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\StatisModel::getTotalByMonthByOrg(), called in D:\xampp\htdocs\Cloud\App\Admin\Controller\IndexController.class.php on line 20 and defined D:\xampp\htdocs\Cloud\App\Admin\Model\StatisModel.class.php 第 71 行.
+NOTIC: [8] Undefined variable: year D:\xampp\htdocs\Cloud\App\Admin\Model\StatisModel.class.php 第 72 行.
+SQL: SELECT IFNULL(h_name,'合计') AS h_name,
+      SUM(IF(year='201801',count,0)) AS month01,
+      SUM(IF(year='201802',count,0)) AS month02,
+      SUM(IF(year='201803',count,0)) AS month03,
+      SUM(IF(year='201804',count,0)) AS month04,
+      SUM(IF(year='201805',count,0)) AS month05,
+      SUM(IF(year='201806',count,0)) AS month06,
+      SUM(IF(year='201807',count,0)) AS month07,
+      SUM(IF(year='201808',count,0)) AS month08,
+      SUM(IF(year='201809',count,0)) AS month09,
+      SUM(IF(year='201810',count,0)) AS month10,
+      SUM(IF(year='{November}',count,0)) AS month11,
+      SUM(IF(year='201812',count,0)) AS month12,
+      SUM(IF(year='total',count,0)) AS total
+      FROM(
+          SELECT h_name,IFNULL(year,'total') AS year,SUM(count) AS count
+          FROM(
+            SELECT h_name,FROM_UNIXTIME(order_time,'%Y%m')as year,SUM(o.total_money) count
+            FROM cloud_order o
+            JOIN cloud_hotel h ON h.id = o.h_id
+            WHERE FROM_UNIXTIME(order_time,'%Y') = 2018
+            GROUP BY h_name,year
+            ) AS A
+          GROUP BY h_name,year
+          WITH ROLLUP
+          HAVING h_name IS NOT NULL
+            )AS B
+      GROUP BY h_name
+      WITH ROLLUP [ RunTime:0.0384s ]
+SQL: SELECT SUM(s.num) AS nums, o.org_id, o.h_id, s.*, m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums DESC LIMIT 100 [ RunTime:0.0013s ]
+SQL: SELECT SUM(total_money) AS money, h.org_id,h.h_name FROM cloud_hotel h INNER JOIN cloud_order o ON o.h_id = h.id  WHERE h.org_id = 2 GROUP BY o.h_id ORDER BY money DESC LIMIT 1 [ RunTime:0.0005s ]
+SQL: SELECT COUNT(s.id) AS nums, o.org_id, o.h_id, s.* ,m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums ASC LIMIT 1 [ RunTime:0.0010s ]
+SQL: SELECT SUM(total_money) AS money, h.org_id,h.h_name FROM cloud_hotel h INNER JOIN cloud_order o ON o.h_id = h.id  WHERE h.org_id = 2 GROUP BY o.h_id ORDER BY money ASC LIMIT 1 [ RunTime:0.0004s ]
+NOTIC: [2048] Declaration of Admin\Model\OrgModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\xampp\htdocs\Cloud\App\Admin\Model\OrgModel.class.php 第 79 行.
+NOTIC: [2048] Declaration of Admin\Model\OrgModel::delete() should be compatible with Think\Model::delete($options = Array) D:\xampp\htdocs\Cloud\App\Admin\Model\OrgModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `cloud_org` [ RunTime:0.0271s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE ( org_id=2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_group_access` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `cloud_auth_group_access` WHERE ( uid = 11 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\Cloud\App\Admin\Controller\IndexController.class.php 第 60 行.
+
+[ 2018-01-04T18:14:31+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0239s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0241s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2018-01-04' [ RunTime:0.0005s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2018-01-04' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0029s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12','13','14')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.099206s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.099249s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000551s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000594s ]
+
+[ 2018-01-04T18:17:59+08:00 ] 127.0.0.1 /cloud/index.php/Admin/Admanage/testWechat?name=%E4%BE%AF%E8%87%AA%E5%BC%BA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001127s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+
+[ 2018-01-04T18:17:59+08:00 ] 127.0.0.1 /cloud/index.php/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000462s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+NOTIC: [8] Undefined variable: current D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\f0f0edaa955fd2857dedea53d1ab9ca3.php 第 7 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006263s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006323s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000584s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000633s ]
+
+[ 2018-01-04T18:19:13+08:00 ] 127.0.0.1 /cloud/index.php/Admin/Admanage/testWechat?name=%E4%BE%AF%E8%87%AA%E5%BC%BA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000663s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000818s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+
+[ 2018-01-04T18:19:13+08:00 ] 127.0.0.1 /cloud/index.php/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+NOTIC: [8] Undefined variable: current D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\f0f0edaa955fd2857dedea53d1ab9ca3.php 第 7 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005775s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005823s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000547s ]
+
+[ 2018-01-04T18:20:17+08:00 ] 127.0.0.1 /cloud/index.php/Admin/Admanage/testWechat?name=%E4%BE%AF%E8%87%AA%E5%BC%BA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000545s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+
+[ 2018-01-04T18:20:17+08:00 ] 127.0.0.1 /cloud/index.php/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined variable: current D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\f0f0edaa955fd2857dedea53d1ab9ca3.php 第 7 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006775s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006832s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000648s ]
+
+[ 2018-01-04T18:22:10+08:00 ] 127.0.0.1 /cloud/index.php/Admin/Admanage/testWechat
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000962s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013511s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+
+[ 2018-01-04T18:22:10+08:00 ] 127.0.0.1 /cloud/index.php/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+NOTIC: [8] Undefined variable: current D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\f0f0edaa955fd2857dedea53d1ab9ca3.php 第 7 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007417s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007476s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000633s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000690s ]
+

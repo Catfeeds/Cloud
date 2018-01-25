@@ -1,0 +1,179 @@
+<include file="Public/head" />
+
+<body class="no-skin">
+    <include file="Public/header" />
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('main-container', 'fixed')
+            } catch (e) {}
+        </script>
+
+        <include file="Public/sidebar" />
+        <div class="main-content">
+            <div class="main-content-inner">
+                <!-- #section:basics/content.breadcrumbs -->
+                <include file="Public/breadcrumbs" />
+
+                <!-- /section:basics/content.breadcrumbs -->
+                <div class="page-content">
+                    <include file="Public/set" />
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="row">
+                                <form id="addInforForm" action="{:U('add')}" method="post" class="form-horizontal" enctype="multipart/form-data">
+                                    <form>
+                                        <div class="form-item">
+                                            <!-- <label class="item-label">广告ID<span class="check-tips"></span></label> -->
+                                            <div class="controls">
+                                                <input type="hidden" class="text input-mid" name="adnum" value="" />
+                                            </div>
+                                            <label class="item-label">公司名称<span class="check-tips"></span></label>
+                                            <!--<div class="controls">-->
+                                            <input type="text" id="adname" onchange="adnametest()" class="text input-mid" name="adname" value="" />
+                                            <span id="adnameres" style="color: red;"></span><br />
+                                            <!--</div>-->
+                                            <label class="item-label">开始时间<span class="check-tips"></span></label>
+
+                                            <!--<div class="controls">-->
+                                            <input type="date" id="starttime" onchange="timetest()" class="text input-mid" name="starttime" value="" />
+                                            <br />
+
+                                            <!--</div>-->
+                                            <label class="item-label">结束时间<span class="check-tips"></span></label>
+                                            <!--<div class="controls">-->
+                                            <input type="date" id="endtime" onchange="timetest()" class="text input-mid" name="endtime" value="" />
+                                            <span id="timeres" style="color: red;"></span><br />
+                                            <!--</div>-->
+                                            <label class="item-label">广告内容<span class="check-tips"></span></label>
+                                            <!--<div class="controls">-->
+                                            <!-- <input type="textarea" class="text input-mid" name="adtext" value="" />
+										 --><textarea name="adtext" id="adtext" onchange="texttest()" placeholder="这里输入内容,不超过20个字符" style="width:300px;height:80px;vertical-align: text-top;"></textarea>
+                                            <span id="adtextres" style="color:red"></span><br />
+
+                                            <!--</div>-->
+                                            <label class="item-label">广告备注<span class="check-tips"></span></label>
+                                            <!--<div class="controls">-->
+                                            <input type="text" id="adremark" class="text input-mid" name="adremark" value="" /><br />
+                                            <!--</div>-->
+
+                                            <table border="0" cellspacing="" cellpadding="">
+                                                <th><label class="item-label">广告图片　<span class="check-tips"></span></label></th>
+                                                <td><input type="file" id="file" onchange="filetest()" name="file" /></td>
+                                                <td><span id="fileres" style="color: red; "></span></td>
+                                                </tr>
+                                            </table>
+
+                                            <label class="item-label">广告链接<span class="check-tips"></span></label>
+                                            <!-- <div class="controls">-->
+                                            <input type="text" id="adhref" class="text input-mid" name="adhref" value="" />
+                                            <span id="adhrefres" style="color: red;"></span>
+                                            <!--<button type="button" id="adhreftest" class="btn hrefbtn" onclick="hrefTest()">测试连接</button>-->
+                                            <br />
+                                            <!--</div>-->
+                                            <label class="item-label">广告标题<span class="check-tips"></span></label>
+                                            <!--<div class="controls">-->
+                                            <input type="text" id="adtitle" onchange="adtitletest()" class="text input-mid" name="adtitle" value="" />
+                                            <span id="adtitleres" style="color: red;"></span><br />
+                                            <!--</div>-->
+                                            <label class="item-label">广告类型 <span class="check-tips"></span></label>
+                                            <!--<div class="controls">-->
+
+                                            <!--<select ame="Ads_type" item="v">{$v.typename}</select>-->
+                                            <select id="adtype" name="adtype" name="adtype">
+											<volist name="types" id="v">
+												<option value="{$v.typenum}">{$v.typename}</option>
+											</volist>
+										</select>
+                                            <br />
+
+                                            <label class="item-label">店铺介绍<span class="check-tips"></span></label>
+                                            <!--<div class="controls">-->
+                                            <textarea name="introduction" id="adintro" onchange="adintrotest()" placeholder="这里输入内容,不超过20个字符" style="width:300px;height:80px;vertical-align: text-top;"></textarea>
+                                            <span id="adintrores" style="color: red;"></span><br />
+                                            <!--</div>-->
+                                            <label class="item-label">最新活动<span class="check-tips"></span></label>
+                                            <!--<div class="controls">-->
+                                            <input type="text" id="activity" class="text input-mid" name="activity" value="" />
+                                            <span id="activityres" style="color: red;"></span><br />
+                                            <!--</div>-->
+                                            <table border="0" cellspacing="" cellpadding="">
+                                                <tr>
+                                                    <th><label class="item-label">推广地区<span class="check-tips"></span></label></th>
+
+                                                    <td>
+                                                        <select name="province" id="province" style="margin-left:9px;"></select>
+                                                        <select name="city" id="city"></select>
+                                                        <select name="area" id="district"></select>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" id="hotelChooseBtn" class="btn" onclick="is_chooseHotel()">选择餐厅</button>
+                                                    </td>
+                                                    <td>
+                                                        <p id="hotelTotalNumber" style="width:100px;margin-left:10px;line-height:40px;"></p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div class="" id="hotelDisplayChoose">
+                                                <div id="hotelShow">
+                                                    <ul id="hotelShowList">
+                                                    </ul>
+                                                </div>
+                                                <div class="btnDiv">
+                                                    <button class="btn mybtn" type="button" id="confirmBtn" onclick="confirmHotelChoose()">确定</button>
+                                                    <button type="button" class="btn mybtn" id="cancelBtn" onclick="cancelHotelChooseBtn()">取消</button>
+                                                </div>
+                                            </div>
+                                            <input id="storeHotelId" name="storeHotelId" style="display:none" />
+                                            <input id="is_submit" name="is_submit" style="display:none" />
+                                            <label class="item-label">电话<span class="check-tips"></span></label>
+                                            <!--<div class="controls">-->
+                                            <input type="text" id="phone" onchange="phonetest()" class="text input-mid" name="phone" value="" />
+                                            <span id="phoneres" style="color: red;"></span><br />
+                                            <!-- </div>-->
+
+                                            <label class="item-label">选择播放的位置　<span class="check-tips"></span></label>
+                                            <!--<div class="controls">-->
+                                            <!--  <input type="radio" name="vehicle" value="0">轮播广告-->
+                                            <input type="radio" id="vehicle" name="vehicle" value="1" checked="checked">滚动条广告<br />
+                                            <!--</div>-->
+
+                                            <label class="item-label">详情页展示　<span class="check-tips"></span></label>
+                                            <!-- <div class="controls">-->
+                                            <input type="radio" id="detail" name="detail" value="0" checked="checked">是
+                                            <input type="radio" id="detail" name="detail" value="1">否<br />
+                                            <!--</div>-->
+
+                                        </div>
+
+                                        <div class="form-item">
+                                            <button class="btn submit-btn" type="submit" id="confirmAdsSave">保 存</button>
+                                            <button class="btn submit-btn" type="submit" id="confirmAdsAdd">提 交</button>
+                                            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+                                        </div>
+                                    </form>
+                            </div>
+
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+
+                </div>
+                <!-- /.page-content -->
+                <include file="Public/footer" />
+                <include file="Public/footerjs" />
+                <script>
+                </script>
+                <script type="text/javascript" src="__PUBLIC__/Admin/js/pdjQuery/PCASClass.js"></script>
+
+                <script language="javascript" defer>
+                    new PCAS("province", "city", "area");
+                </script>
+                <script src="__PUBLIC__/Admin/js/addinput.js"></script>
+                <script src="__PUBLIC__/Admin/js/hotelchoose.js"></script>
+
+</body>
+
+</html>

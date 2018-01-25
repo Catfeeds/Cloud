@@ -1,0 +1,20 @@
+[ 2017-12-23T10:12:41+08:00 ] ::1 /cloud/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.058160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016325s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039057s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039101s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.012766s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012809s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.020770s ]
+INFO: [ app_end ] --END-- [ RunTime:0.020828s ]
+

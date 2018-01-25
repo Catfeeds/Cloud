@@ -1,0 +1,49 @@
+<include file="Public/head" />
+
+<body class="no-skin">
+  <include file="Public/header" />
+  <div class="main-container" id="main-container">
+    <script type="text/javascript">
+      try {
+        ace.settings.check('main-container', 'fixed')
+      } catch (e) {}
+    </script>
+
+    <include file="Public/sidebar" />
+    <div class="main-content">
+      <div class="main-content-inner">
+        <!-- #section:basics/content.breadcrumbs -->
+        <include file="Public/breadcrumbs" />
+
+        <!-- /section:basics/content.breadcrumbs -->
+        <div class="page-content">
+        <div class="row">
+        <div class="col-xs-12">
+        <!-- PAGE CONTENT BEGINS -->
+        <div class="row">
+         <form action="{:U('edit')}" method="post" class="form-horizontal">
+            <!-- <div class="form-item"> -->
+                <label class="item-label">类别名称<span class="check-tips"></span></label>
+                <!-- <div class="controls"> -->
+                    <input type="text" class="text input-mid" name="typename" value="{$typename}"/>
+                    <input type="hidden" name="typenum" value="{$typenum}"><br/>
+                <!-- </div>
+            </div> -->
+           <label class="item-label">备注<span class="check-tips"></span></label>
+           <textarea placeholder="这里输入内容" name="remark" style="width: 300px; height: 100px; vertical-align: text-top;" >{$remark}</textarea><br/>
+            <div class="form-item">
+                <button class="btn submit-btn"  type="submit" >确 定</button>
+                <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+            </div>
+        </form>
+          <include file="Public/set" />
+          
+          </div>
+  <include file="Public/footer" />
+
+           </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+            <include file="Public/footerjs"/>
+</body>
+</html>

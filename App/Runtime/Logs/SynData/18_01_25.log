@@ -1,0 +1,12 @@
+[ 2018-01-25T14:03:44+08:00 ] 127.0.0.1 /Cloud/SynData/Ads/synAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001508s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `h_scode` = '3ChvkTZq8Aa7RMUHYpOy0tw24XoidQES' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM cloud_ads where adverify_time > 1516437037 AND adverify_time<= 1516860223 AND adverify=1 AND is_delete=0 ORDER BY adnum DESC [ RunTime:0.0004s ]
+

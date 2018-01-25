@@ -1,0 +1,1411 @@
+[ 2017-12-22T22:51:06+08:00 ] ::1 /cloud/index.php/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+NOTIC: [8] Undefined variable: current D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\f0f0edaa955fd2857dedea53d1ab9ca3.php 第 7 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017941s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017995s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000768s ]
+
+[ 2017-12-22T22:51:07+08:00 ] ::1 /cloud/index.php/Admin/login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000984s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001702s ]
+
+[ 2017-12-22T22:51:13+08:00 ] ::1 /cloud/index.php/Admin/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000691s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0146s ]
+SQL: SELECT `uid`,`user`,`org_id`,`h_id` FROM `cloud_member` WHERE `user` = '1234' AND `password` = 'b3c89ea6161f66de5e2bfccfda5ed3e4' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\LoginController.class.php 第 51 行.
+SQL: SHOW COLUMNS FROM `cloud_log` [ RunTime:0.0224s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Common\function.php 第 12 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0022s ]
+SQL: SELECT `user` FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `cloud_log` (`name`,`t`,`ip`,`log`) VALUES ('1234','1513954273','::1','登录成功。') [ RunTime:0.0003s ]
+
+[ 2017-12-22T22:51:13+08:00 ] ::1 /cloud/index.php/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0215s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Index/index' [ RunTime:0.0225s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0021s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0004s ]
+SQL: SELECT SUM(s.num) AS nums, o.org_id, o.h_id, s.*, m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums DESC [ RunTime:0.0571s ]
+SQL: SELECT SUM(nums) nums FROM(SELECT SUM(s.num) AS nums, o.org_id, o.h_id, s.*, m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums DESC LIMIT 5,30) AS A [ RunTime:0.0012s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\StatisModel::getTotalByMonthByOrg(), called in D:\xampp\htdocs\Cloud\App\Admin\Controller\IndexController.class.php on line 20 and defined D:\xampp\htdocs\Cloud\App\Admin\Model\StatisModel.class.php 第 71 行.
+NOTIC: [8] Undefined variable: year D:\xampp\htdocs\Cloud\App\Admin\Model\StatisModel.class.php 第 72 行.
+SQL: SELECT IFNULL(h_name,'合计') AS h_name,
+      SUM(IF(year='201701',count,0)) AS month01,
+      SUM(IF(year='201702',count,0)) AS month02,
+      SUM(IF(year='201703',count,0)) AS month03,
+      SUM(IF(year='201704',count,0)) AS month04,
+      SUM(IF(year='201705',count,0)) AS month05,
+      SUM(IF(year='201706',count,0)) AS month06,
+      SUM(IF(year='201707',count,0)) AS month07,
+      SUM(IF(year='201708',count,0)) AS month08,
+      SUM(IF(year='201709',count,0)) AS month09,
+      SUM(IF(year='201710',count,0)) AS month10,
+      SUM(IF(year='{November}',count,0)) AS month11,
+      SUM(IF(year='201712',count,0)) AS month12,
+      SUM(IF(year='total',count,0)) AS total
+      FROM(
+          SELECT h_name,IFNULL(year,'total') AS year,SUM(count) AS count
+          FROM(
+            SELECT h_name,FROM_UNIXTIME(order_time,'%Y%m')as year,SUM(o.total_money) count
+            FROM cloud_order o
+            JOIN cloud_hotel h ON h.id = o.h_id
+            WHERE FROM_UNIXTIME(order_time,'%Y') = 2017
+            GROUP BY h_name,year
+            ) AS A
+          GROUP BY h_name,year
+          WITH ROLLUP
+          HAVING h_name IS NOT NULL
+            )AS B
+      GROUP BY h_name
+      WITH ROLLUP [ RunTime:0.0060s ]
+SQL: SELECT SUM(s.num) AS nums, o.org_id, o.h_id, s.*, m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums DESC LIMIT 100 [ RunTime:0.0012s ]
+SQL: SELECT SUM(total_money) AS money, h.org_id,h.h_name FROM cloud_hotel h INNER JOIN cloud_order o ON o.h_id = h.id  WHERE h.org_id = 2 GROUP BY o.h_id ORDER BY money DESC LIMIT 1 [ RunTime:0.0004s ]
+SQL: SELECT COUNT(s.id) AS nums, o.org_id, o.h_id, s.* ,m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums ASC LIMIT 1 [ RunTime:0.0010s ]
+SQL: SELECT SUM(total_money) AS money, h.org_id,h.h_name FROM cloud_hotel h INNER JOIN cloud_order o ON o.h_id = h.id  WHERE h.org_id = 2 GROUP BY o.h_id ORDER BY money ASC LIMIT 1 [ RunTime:0.0004s ]
+NOTIC: [2048] Declaration of Admin\Model\OrgModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\xampp\htdocs\Cloud\App\Admin\Model\OrgModel.class.php 第 79 行.
+NOTIC: [2048] Declaration of Admin\Model\OrgModel::delete() should be compatible with Think\Model::delete($options = Array) D:\xampp\htdocs\Cloud\App\Admin\Model\OrgModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `cloud_org` [ RunTime:0.0166s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE ( org_id=2 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_group_access` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `cloud_auth_group_access` WHERE ( uid = 11 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\Cloud\App\Admin\Controller\IndexController.class.php 第 60 行.
+
+[ 2017-12-22T22:51:14+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0022s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0024s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+
+[ 2017-12-22T22:52:24+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0025s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0027s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+
+[ 2017-12-22T22:52:25+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0004s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0023s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0023s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+
+[ 2017-12-22T22:55:16+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0029s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0025s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0003s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+
+[ 2017-12-22T22:55:35+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0022s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0022s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0003s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+
+[ 2017-12-22T23:03:16+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001137s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001226s ]
+
+[ 2017-12-22T23:03:43+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000823s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0065s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0047s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') LIMIT 1' at line 1
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\Think.class.php 第 230 行.
+
+[ 2017-12-22T23:04:42+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0027s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0027s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0046s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\Think.class.php 第 230 行.
+
+[ 2017-12-22T23:05:04+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001079s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001139s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001229s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0005s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0044s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0042s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0005s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0045s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\Think.class.php 第 230 行.
+
+[ 2017-12-22T23:05:07+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000832s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0029s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0042s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\Think.class.php 第 230 行.
+
+[ 2017-12-22T23:05:23+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001340s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0004s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0044s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0007s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0042s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\Think.class.php 第 230 行.
+
+[ 2017-12-22T23:05:57+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000903s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0032s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0005s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+
+[ 2017-12-22T23:17:17+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001171s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0025s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0040s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0007s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0037s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+
+[ 2017-12-22T23:17:53+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0031s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0026s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0038s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+
+[ 2017-12-22T23:20:37+08:00 ] ::1 /cloud/index.php/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000691s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000830s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0424s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063053s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063151s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000854s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000925s ]
+
+[ 2017-12-22T23:20:40+08:00 ] ::1 /cloud/index.php/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001072s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001153s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Index/index' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0091s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SELECT SUM(s.num) AS nums, o.org_id, o.h_id, s.*, m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums DESC [ RunTime:0.0025s ]
+SQL: SELECT SUM(nums) nums FROM(SELECT SUM(s.num) AS nums, o.org_id, o.h_id, s.*, m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums DESC LIMIT 5,30) AS A [ RunTime:0.0023s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\StatisModel::getTotalByMonthByOrg(), called in D:\xampp\htdocs\Cloud\App\Admin\Controller\IndexController.class.php on line 20 and defined D:\xampp\htdocs\Cloud\App\Admin\Model\StatisModel.class.php 第 71 行.
+NOTIC: [8] Undefined variable: year D:\xampp\htdocs\Cloud\App\Admin\Model\StatisModel.class.php 第 72 行.
+SQL: SELECT IFNULL(h_name,'合计') AS h_name,
+      SUM(IF(year='201701',count,0)) AS month01,
+      SUM(IF(year='201702',count,0)) AS month02,
+      SUM(IF(year='201703',count,0)) AS month03,
+      SUM(IF(year='201704',count,0)) AS month04,
+      SUM(IF(year='201705',count,0)) AS month05,
+      SUM(IF(year='201706',count,0)) AS month06,
+      SUM(IF(year='201707',count,0)) AS month07,
+      SUM(IF(year='201708',count,0)) AS month08,
+      SUM(IF(year='201709',count,0)) AS month09,
+      SUM(IF(year='201710',count,0)) AS month10,
+      SUM(IF(year='{November}',count,0)) AS month11,
+      SUM(IF(year='201712',count,0)) AS month12,
+      SUM(IF(year='total',count,0)) AS total
+      FROM(
+          SELECT h_name,IFNULL(year,'total') AS year,SUM(count) AS count
+          FROM(
+            SELECT h_name,FROM_UNIXTIME(order_time,'%Y%m')as year,SUM(o.total_money) count
+            FROM cloud_order o
+            JOIN cloud_hotel h ON h.id = o.h_id
+            WHERE FROM_UNIXTIME(order_time,'%Y') = 2017
+            GROUP BY h_name,year
+            ) AS A
+          GROUP BY h_name,year
+          WITH ROLLUP
+          HAVING h_name IS NOT NULL
+            )AS B
+      GROUP BY h_name
+      WITH ROLLUP [ RunTime:0.0017s ]
+SQL: SELECT SUM(s.num) AS nums, o.org_id, o.h_id, s.*, m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums DESC LIMIT 100 [ RunTime:0.0021s ]
+SQL: SELECT SUM(total_money) AS money, h.org_id,h.h_name FROM cloud_hotel h INNER JOIN cloud_order o ON o.h_id = h.id  WHERE h.org_id = 2 GROUP BY o.h_id ORDER BY money DESC LIMIT 1 [ RunTime:0.0006s ]
+SQL: SELECT COUNT(s.id) AS nums, o.org_id, o.h_id, s.* ,m.menu_name FROM cloud_order o INNER JOIN cloud_order_sub s ON s.oid = o.id INNER JOIN cloud_cook_menu m ON m.id=s.menu_id WHERE o.org_id = 2 Group by menu_id ORDER BY nums ASC LIMIT 1 [ RunTime:0.0012s ]
+SQL: SELECT SUM(total_money) AS money, h.org_id,h.h_name FROM cloud_hotel h INNER JOIN cloud_order o ON o.h_id = h.id  WHERE h.org_id = 2 GROUP BY o.h_id ORDER BY money ASC LIMIT 1 [ RunTime:0.0005s ]
+NOTIC: [2048] Declaration of Admin\Model\OrgModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\xampp\htdocs\Cloud\App\Admin\Model\OrgModel.class.php 第 79 行.
+NOTIC: [2048] Declaration of Admin\Model\OrgModel::delete() should be compatible with Think\Model::delete($options = Array) D:\xampp\htdocs\Cloud\App\Admin\Model\OrgModel.class.php 第 79 行.
+SQL: SHOW COLUMNS FROM `cloud_org` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE ( org_id=2 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_group_access` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `cloud_auth_group_access` WHERE ( uid = 11 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\Cloud\App\Admin\Controller\IndexController.class.php 第 60 行.
+
+[ 2017-12-22T23:20:40+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0034s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0025s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0006s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 129 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0040s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+
+[ 2017-12-22T23:21:07+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0027s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0034s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0042s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0002s ]
+
+[ 2017-12-22T23:32:22+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0025s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0025s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0024s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0008s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0006s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000348s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000435s ]
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 463 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.143632s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.143690s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000741s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001620s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001714s ]
+
+[ 2017-12-22T23:34:45+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0026s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0037s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0006s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0027s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000359s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000433s ]
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 463 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065046s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065126s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000904s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000961s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001167s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001238s ]
+
+[ 2017-12-22T23:34:49+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0004s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0029s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0034s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0026s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000285s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000375s ]
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 463 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065884s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002056s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002154s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\Cloud\ThinkPHP\Common\functions.php:850) D:\xampp\htdocs\Cloud\ThinkPHP\Library\Think\View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002530s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002635s ]
+
+[ 2017-12-22T23:34:53+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0097s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0038s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0005s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0029s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0005s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0006s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0005s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0005s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0004s ]
+
+[ 2017-12-22T23:37:56+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000723s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0005s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0026s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0027s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0033s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0005s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0005s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047521s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047596s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000738s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000797s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001259s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001344s ]
+
+[ 2017-12-22T23:38:36+08:00 ] ::1 /cloud/index.php/Admin/Admanage/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000760s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/add' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0023s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant uniqid - assumed 'uniqid' D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 195 行.
+SQL: SHOW COLUMNS FROM `cloud_ads_type` [ RunTime:0.0177s ]
+SQL: SHOW COLUMNS FROM `cloud_org` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `cloud_org` WHERE ( id>0 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cloud_ads_type`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000265s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000328s ]
+NOTIC: [8] Undefined index: typename D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\9bd46574c58ffeb34d93a834ddb9847e.php 第 451 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035768s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035838s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001065s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001133s ]
+
+[ 2017-12-22T23:39:13+08:00 ] ::1 /cloud/index.php/Admin/Admanage/getMatchedHotel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000905s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001361s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/getMatchedHotel' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 67 行.
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0026s ]
+SQL: SELECT `id`,`h_name` FROM `cloud_hotel` WHERE `h_province` = '北京市' AND `h_city` = '市辖区' AND `h_district` = '东城区'  [ RunTime:0.0005s ]
+
+[ 2017-12-22T23:39:14+08:00 ] ::1 /cloud/index.php/Admin/Admanage/getMatchedHotel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000466s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001348s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/getMatchedHotel' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 67 行.
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0024s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0025s ]
+SQL: SELECT `id`,`h_name` FROM `cloud_hotel` WHERE `h_province` = '北京市' AND `h_city` = '市辖区' AND `h_district` = '东城区'  [ RunTime:0.0003s ]
+
+[ 2017-12-22T23:39:17+08:00 ] ::1 /cloud/index.php/Admin/Admanage/getMatchedHotel
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000816s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0004s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/getMatchedHotel' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 67 行.
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0032s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0027s ]
+SQL: SELECT `id`,`h_name` FROM `cloud_hotel` WHERE `h_province` = '北京市' AND `h_city` = '市辖区' AND `h_district` = '东城区'  [ RunTime:0.0004s ]
+
+[ 2017-12-22T23:39:28+08:00 ] ::1 /cloud/index.php/Admin/Admanage/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000777s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/add' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0025s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant uniqid - assumed 'uniqid' D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 195 行.
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0028s ]
+SQL: INSERT INTO `cloud_ads` (`uid`,`starttime`,`endtime`,`adname`,`adtext`,`adremark`,`adpic`,`adhref`,`adtitle`,`adtype`,`introduction`,`activity`,`phone`,`vehicle`,`detail`,`edit_time`,`is_submit`,`ad_hotel`) VALUES ('11','2017-12-01','2017-12-31','测试汉字','汉字','哈哈哈哈','/cloud/Data/Uploads/Images/微信图片_20171211222906.png','www.baidu.com','侯氏集团','1','汉字','满50减20','15034104778','1','0','1513957168','0','11,12,13,14') [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007522s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007590s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000796s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000836s ]
+
+[ 2017-12-22T23:39:29+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001129s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0007s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0037s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0040s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0005s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0038s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12','13','14')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000344s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000424s ]
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054702s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000963s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002173s ]
+
+[ 2017-12-22T23:40:41+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0005s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0035s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0026s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0028s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12','13','14')  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000190s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039012s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039062s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000676s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001132s ]
+
+[ 2017-12-22T23:40:51+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0005s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0036s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0038s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0005s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0005s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0005s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12','13','14')  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000192s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000245s ]
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044688s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044749s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000880s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000950s ]
+
+[ 2017-12-22T23:41:35+08:00 ] ::1 /cloud/index.php/Admin/Admanage/myadlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001209s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\Cloud\App\Admin\Controller\ComController.class.php 第 119 行.
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0251s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM cloud_auth_group g left join cloud_auth_group_access a on g.id=a.group_id where a.uid=11 [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_member` [ RunTime:0.0262s ]
+SQL: SELECT * FROM `cloud_member` WHERE `uid` = 11 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT title FROM cloud_auth_group_access ga LEFT JOIN cloud_auth_group g ON ga.group_id=g.id where uid=11 [ RunTime:0.0003s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM cloud_auth_rule s left join cloud_auth_rule p on p.id=s.pid where s.name='Admanage/myadlist' [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cloud_auth_rule` [ RunTime:0.0026s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `cloud_auth_rule` WHERE ( islink=1 AND id in (101,106,105,48,49,50,55)  ) ORDER BY o ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cloud_ads` [ RunTime:0.0026s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='1' WHERE `endtime` < '2017-12-22' [ RunTime:0.0004s ]
+SQL: UPDATE `cloud_ads` SET `is_delete`='0' WHERE `endtime` > '2017-12-22' [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_ads` WHERE ( uid=11 )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: ad_hotel D:\xampp\htdocs\Cloud\App\Admin\Controller\AdmanageController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0026s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0002s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13','17')  [ RunTime:0.0004s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13','14','16')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('12','13')  [ RunTime:0.0005s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('13')  [ RunTime:0.0003s ]
+SQL: SELECT `h_name` FROM `cloud_hotel` WHERE `id` IN ('11','12','13','14')  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000292s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000386s ]
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 430 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 454 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 466 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 509 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 533 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 543 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 588 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 612 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 622 行.
+NOTIC: [8] Undefined variable: 1 D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 682 行.
+NOTIC: [8] Undefined index: adshowcount D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 707 行.
+NOTIC: [8] Undefined index: address D:\xampp\htdocs\Cloud\App\Runtime\Cache\Admin\a635a2b326dd7ff570395f73ee942bca.php 第 717 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041325s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041387s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000911s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000979s ]
+

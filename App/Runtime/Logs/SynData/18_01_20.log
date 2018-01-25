@@ -1,0 +1,121 @@
+[ 2018-01-20T13:42:19+08:00 ] 127.0.0.1 /Cloud/SynData/Ads/synAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `h_scode` = '3ChvkTZq8Aa7RMUHYpOy0tw24XoidQES' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM cloud_ads where adverify_time > 1515578834 AND adverify_time<= 1516426938 AND adverify=1 AND is_delete=0 ORDER BY adnum DESC [ RunTime:0.0056s ]
+
+[ 2018-01-20T13:42:35+08:00 ] 127.0.0.1 /Cloud/SynData/Ads/synAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000107s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `h_scode` = '3ChvkTZq8Aa7RMUHYpOy0tw24XoidQES' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM cloud_ads where adverify_time > 1516426938 AND adverify_time<= 1516426955 AND adverify=1 AND is_delete=0 ORDER BY adnum DESC [ RunTime:0.0022s ]
+
+[ 2018-01-20T13:42:38+08:00 ] 127.0.0.1 /Cloud/SynData/Ads/synAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000439s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `h_scode` = '3ChvkTZq8Aa7RMUHYpOy0tw24XoidQES' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM cloud_ads where adverify_time > 1516426955 AND adverify_time<= 1516426958 AND adverify=1 AND is_delete=0 ORDER BY adnum DESC [ RunTime:0.0003s ]
+
+[ 2018-01-20T13:43:09+08:00 ] 127.0.0.1 /Cloud/SynData/Ads/synAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `h_scode` = '3ChvkTZq8Aa7RMUHYpOy0tw24XoidQES' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM cloud_ads where adverify_time > 1516426958 AND adverify_time<= 1516426988 AND adverify=1 AND is_delete=0 ORDER BY adnum DESC [ RunTime:0.0003s ]
+
+[ 2018-01-20T13:45:27+08:00 ] 127.0.0.1 /Cloud/SynData/Ads/synAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000459s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `h_scode` = '3ChvkTZq8Aa7RMUHYpOy0tw24XoidQES' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM cloud_ads where adverify_time > 1516426988 AND adverify_time<= 1516427126 AND adverify=1 AND is_delete=0 ORDER BY adnum DESC [ RunTime:0.0002s ]
+
+[ 2018-01-20T13:46:00+08:00 ] 127.0.0.1 /Cloud/SynData/Ads/synAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000510s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `h_scode` = '3ChvkTZq8Aa7RMUHYpOy0tw24XoidQES' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM cloud_ads where adverify_time > 1516427126 AND adverify_time<= 1516427159 AND adverify=1 AND is_delete=0 ORDER BY adnum DESC [ RunTime:0.0002s ]
+
+[ 2018-01-20T13:46:05+08:00 ] 127.0.0.1 /Cloud/SynData/Ads/synAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000391s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `h_scode` = '3ChvkTZq8Aa7RMUHYpOy0tw24XoidQES' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM cloud_ads where adverify_time > 1516427159 AND adverify_time<= 1516427165 AND adverify=1 AND is_delete=0 ORDER BY adnum DESC [ RunTime:0.0003s ]
+
+[ 2018-01-20T16:30:38+08:00 ] 127.0.0.1 /Cloud/SynData/Ads/synAd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000756s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `h_scode` = '3ChvkTZq8Aa7RMUHYpOy0tw24XoidQES' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM cloud_ads where adverify_time > 1516427165 AND adverify_time<= 1516437037 AND adverify=1 AND is_delete=0 ORDER BY adnum DESC [ RunTime:0.0005s ]
+
+[ 2018-01-20T16:43:01+08:00 ] 127.0.0.1 /Cloud/SynData/Order/synOrder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `cloud_hotel` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `h_scode` = '3ChvkTZq8Aa7RMUHYpOy0tw24XoidQES' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cloud_hotel` WHERE `h_scode` = '3ChvkTZq8Aa7RMUHYpOy0tw24XoidQES' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cloud_order` [ RunTime:0.0034s ]
+SQL: INSERT INTO `cloud_order` (`org_id`,`h_id`,`order_time`,`syn_time`,`pay_time`,`pay_type`,`total_money`,`real_money`,`evaluate`) VALUES ('2','13','1497337904','1516437781','0','','4799.00','0.00','') [ RunTime:0.0898s ]
+SQL: SHOW COLUMNS FROM `cloud_order_sub` [ RunTime:0.0032s ]
+SQL: INSERT INTO `cloud_order_sub` (`price`,`num`,`taste`,`menu_id`,`oid`) VALUES ('70','1','','40','106') [ RunTime:0.0489s ]
+SQL: INSERT INTO `cloud_order_sub` (`price`,`num`,`taste`,`menu_id`,`oid`) VALUES ('40','1','','37','106') [ RunTime:0.0334s ]
+SQL: INSERT INTO `cloud_order_sub` (`price`,`num`,`taste`,`menu_id`,`oid`) VALUES ('89','1','','39','106') [ RunTime:0.0324s ]
+SQL: INSERT INTO `cloud_order_sub` (`price`,`num`,`taste`,`menu_id`,`oid`) VALUES ('50','92','','14','106') [ RunTime:0.0557s ]
+SQL: INSERT INTO `cloud_order` (`org_id`,`h_id`,`order_time`,`syn_time`,`pay_time`,`pay_type`,`total_money`,`real_money`,`evaluate`) VALUES ('2','13','1502978458','1516437781','0','','388.00','0.00','') [ RunTime:0.0877s ]
+SQL: INSERT INTO `cloud_order_sub` (`price`,`num`,`taste`,`menu_id`,`oid`) VALUES ('40','2','','28','107') [ RunTime:0.0437s ]
+SQL: INSERT INTO `cloud_order_sub` (`price`,`num`,`taste`,`menu_id`,`oid`) VALUES ('89','1','','39','107') [ RunTime:0.0333s ]
+SQL: INSERT INTO `cloud_order_sub` (`price`,`num`,`taste`,`menu_id`,`oid`) VALUES ('70','1','','40','107') [ RunTime:0.0325s ]
+SQL: INSERT INTO `cloud_order_sub` (`price`,`num`,`taste`,`menu_id`,`oid`) VALUES ('40','1','','37','107') [ RunTime:0.0335s ]
+SQL: INSERT INTO `cloud_order_sub` (`price`,`num`,`taste`,`menu_id`,`oid`) VALUES ('60','1','','12','107') [ RunTime:0.0324s ]
+SQL: INSERT INTO `cloud_order_sub` (`price`,`num`,`taste`,`menu_id`,`oid`) VALUES ('49','1','加快 微辣 少油 少糖','9','107') [ RunTime:0.0557s ]
+

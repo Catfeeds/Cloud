@@ -1,0 +1,319 @@
+<include file="Public/head" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/module.css" />
+
+<body class="no-skin">
+	<include file="Public/header" />
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+			try {
+				ace.settings.check('main-container', 'fixed')
+			} catch(e) {}
+		</script>
+
+		<include file="Public/sidebar" />
+		<div class="main-content">
+			<div class="main-content-inner">
+				<!-- #section:basics/content.breadcrumbs -->
+				<include file="Public/breadcrumbs" />
+
+				<!-- /section:basics/content.breadcrumbs -->
+				<div class="page-content">
+					<include file="Public/set" />
+					<div class="row" style="overflow:hidden">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<div class="row" style="overflow:hidden">
+								<div class="data-table tableScroll">
+									<table cellspacing="0" class="adsListShow  table-striped " style="height: auto;">
+										<thead>
+											<tr>
+												<th>ID(未审核)</th>
+												<th>审核状态</th>
+												<th>发布时间</th>
+												<th>结束时间</th>
+												<th>公司名称</th>
+												<th>广告类型</th>
+												<th>广告标题</th>
+												<!--轮播还是顶部滚动-->
+												<th>播放位置</th>
+												<th>详情页</th>
+												<!--<th>轮播次数</th>-->
+												<th>店铺介绍</th>
+												<th>电话</th>
+												<th>更多详情</td>
+											</tr>
+										</thead>
+										<tbody>
+											<foreach name="list" item='v'>
+												<if condition="$v.is_delete eq 0">
+													<if condition="$v.adverify eq 0">
+
+														<tr>
+															<td>{$v.adnum}</td>
+															<td>
+																<!--<a href="{:U('adsedit')}?adnum={$v.adnum}">修改</a> |
+                                                        <a href="{:U('adsdel')}?adnum={$v.adnum}">删除</a>-->
+
+																<p id="adsverify">
+																	<a id="pass" href="{:U('adpass')}?adnum={$v.adnum}">通过</a>
+																	<a id="nopass" href="{:U('adnopass')}?adnum={$v.adnum}">不通过</a>
+																</p>
+
+															</td>
+															<td>{$v.starttime}</td>
+															<td>{$v.endtime}</td>
+															<td>{$v.adname}</td>
+															<!--<td>{$v.adtype}</td>-->
+															<td>
+																<!--console.log({$v.adtype});-->
+																<!--<switch name="$v.adtype">
+                                                            <case value='1'>娱乐</case>
+                                                            <case value="2">养生</case>
+                                                            <case value="3">交通</case>
+                                                            <case value="4">购物</case>
+                                                            <case value="5">健身</case>
+                                                            <case value="6">银行</case>
+                                                            <default />餐饮
+                                                        </switch>-->
+																<if condition="$v.adtype eq 1"> 娱乐
+																	<elseif condition="$v.adtype eq 2" />养生
+																	<elseif condition="$v.adtype eq 3" />交通
+																	<elseif condition="$v.adtype eq 4" />购物
+																	<elseif condition="$v.adtype eq 5" />健身
+																	<elseif condition="$v.adtype eq 6" />银行
+																	<elseif condition="$v.adtype eq 7" />餐饮
+																</if>
+															</td>
+															<td>{$v.adtitle} </td>
+															<td>
+																<if condition="$v.vehicle eq 0"> 轮播
+																	<elseif condition="$v.vehicle eq 1" />顶部滚动
+																</if>
+															</td>
+															<td>
+																<if condition="$v.detail eq 0"> 有
+																	<elseif condition="$v.detail eq 1" />无
+																</if>
+															</td>
+															
+															<!--<td>{$v.adshowcount}</td>-->
+															<td>{$v.introduction}</td>
+															<td>{$v.phone}</td>
+															<td class="checkMoreDetail">点我查看
+																<div class="moreDetailShow">
+																	<p>广告编号:{$v.adnum}</p>
+																	<p>广告标题:{$v.adtitle} </p>
+																	<p>广告内容:{$v.adtext}</p>
+																	<p>推广区域:</p>
+																	<p>图片:<img src='{$v.adpic}' /> </p>
+																	<p>店铺地址:{$v.address} </p>
+																	<p>最新活动:{$v.activity}</p>
+																	<p>广告备注:{$v.adremark}</p>
+																</div>
+															</td>
+														</tr>
+													</if>
+												</if>
+											</foreach>
+										</tbody>
+									</table>
+
+									<table cellspacing="0" class="adsListShow  table-striped " style="height: auto;">
+										<thead>
+											<tr>
+												<th>ID(已审核)</th>
+												<th>审核状态</th>
+												<th>发布时间</th>
+												<th>结束时间</th>
+												<th>公司名称</th>
+												<th>广告类型</th>
+												<th>广告标题</th>
+												<!--轮播还是顶部滚动-->
+												<th>播放位置</th>
+												<th>详情页</th>
+												<!--<th>轮播次数</th>-->
+												<th>店铺介绍</th>
+												<th>电话</th>
+												<th>更多详情</td>
+											</tr>
+										</thead>
+										<tbody>
+											<foreach name="list" item='v'>
+												<if condition="$v.is_delete eq 0">
+													<if condition="$v.adverify neq 0">
+
+														<tr>
+															<td>{$v.adnum}</td>
+															<td>
+																<!--<a href="{:U('adsedit')}?adnum={$v.adnum}">修改</a> |
+                                                        <a href="{:U('adsdel')}?adnum={$v.adnum}">删除</a>-->
+																<if condition="$v.adverify eq 1"><p style="color: darkgreen;">已通过</p>
+																	<elseif condition="$v.adverify eq 2" /><p style="color: red;">未通过</p>
+																</if>
+															</td>
+															<td>{$v.starttime}</td>
+															<td>{$v.endtime}</td>
+															<td>{$v.adname}</td>
+															<!--<td>{$v.adtype}</td>-->
+															<td>
+																<!--console.log({$v.adtype});-->
+																<!--<switch name="$v.adtype">
+                                                            <case value='1'>娱乐</case>
+                                                            <case value="2">养生</case>
+                                                            <case value="3">交通</case>
+                                                            <case value="4">购物</case>
+                                                            <case value="5">健身</case>
+                                                            <case value="6">银行</case>
+                                                            <default />餐饮
+                                                        </switch>-->
+																<if condition="$v.adtype eq 1"> 娱乐
+																	<elseif condition="$v.adtype eq 2" />养生
+																	<elseif condition="$v.adtype eq 3" />交通
+																	<elseif condition="$v.adtype eq 4" />购物
+																	<elseif condition="$v.adtype eq 5" />健身
+																	<elseif condition="$v.adtype eq 6" />银行
+																	<elseif condition="$v.adtype eq 7" />餐饮
+																</if>
+															</td>
+															<td>{$v.adtitle}</td>
+															<td>
+																<if condition="$v.vehicle eq 0"> 轮播
+																	<elseif condition="$v.vehicle eq 1" />顶部滚动
+																</if>
+															</td>
+															
+															<td>
+																<if condition="$v.detail eq 0"> 有
+																	<elseif condition="$v.detail eq 1" />无
+																</if>
+															</td>
+															<!--<td>{$v.adshowcount}</td>-->
+															<td>{$v.introduction}</td>
+															<td>{$v.phone}</td>
+															<td class="checkMoreDetail">点我查看
+																<div class="moreDetailShow">
+																	<p>广告编号:{$v.adnum}</p>
+																	<p>广告标题:{$v.adtitle} </p>
+																	<p>广告内容:{$v.adtext}</p>
+																	<p>推广区域:</p>
+																	<p>图片: <img src='{$v.adpic}' /> </p>
+																	<p>店铺地址:{$v.address} </p>
+																	<p>最新活动:{$v.activity}</p>
+																	<p>广告备注:{$v.adremark}</p>
+																</div>
+															</td>
+														</tr>
+													</if>
+												</if>
+											</foreach>
+										</tbody>
+									</table>
+
+									<table cellspacing="0" class="adsListShow  table-striped " style="height: auto;">
+										<thead>
+											<tr>
+												<th>ID(已过期)</th>
+												<th>审核状态</th>
+												<th>发布时间</th>
+												<th>结束时间</th>
+												<th>公司名称</th>
+												<th>广告类型</th>
+												<th>广告标题</th>
+												<!--轮播还是顶部滚动-->
+												<th>播放位置</th>
+												<th>详情页</th>
+												<!--<th>轮播次数</th>-->
+												<th>店铺介绍</th>
+												<th>电话</th>
+												<th>更多详情</td>
+											</tr>
+										</thead>
+										<tbody>
+											<foreach name="list" item='v'>
+												<if condition="$v.is_delete eq 1">
+													<tr>
+														<td>{$v.adnum}</td>
+														<td>
+															<!--<a href="{:U('adsedit')}?adnum={$v.adnum}">修改</a> |
+                                                        <a href="{:U('adsdel')}?adnum={$v.adnum}">删除</a>-->
+															<if condition="$v.adverify eq 0"> 未审核
+																<elseif condition="$v.adverify eq 1" />已通过
+																<elseif condition="$v.adverify eq 2" style="color: red;"/>未通过
+															</if>															
+														</td>
+														<td>{$v.starttime}</td>
+														<td>{$v.endtime}</td>
+														<td>{$v.adname}</td>
+														<!--<td>{$v.adtype}</td>-->
+														<td>
+															<!--console.log({$v.adtype});-->
+															<!--<switch name="$v.adtype">
+                                                            <case value='1'>娱乐</case>
+                                                            <case value="2">养生</case>
+                                                            <case value="3">交通</case>
+                                                            <case value="4">购物</case>
+                                                            <case value="5">健身</case>
+                                                            <case value="6">银行</case>
+                                                            <default />餐饮
+                                                        </switch>-->
+															<if condition="$v.adtype eq 1"> 娱乐
+																<elseif condition="$v.adtype eq 2" />养生
+																<elseif condition="$v.adtype eq 3" />交通
+																<elseif condition="$v.adtype eq 4" />购物
+																<elseif condition="$v.adtype eq 5" />健身
+																<elseif condition="$v.adtype eq 6" />银行
+																<elseif condition="$v.adtype eq 7" />餐饮
+															</if>
+														</td>
+														<td>{$v.adtitle}</td>
+														<td>
+															<if condition="$v.vehicle eq 0"> 轮播
+																<elseif condition="$v.vehicle eq 1" />顶部滚动
+															</if>
+														</td>
+														
+														<td>
+															<if condition="$v.detail eq 0"> 有
+																<elseif condition="$v.detail eq 1" />无
+															</if>
+														</td>
+														<!--<td>{$v.adshowcount}</td>-->
+														<td>{$v.introduction}</td>
+														<td>{$v.phone}</td>
+														<td class="checkMoreDetail">点我查看
+															<div class="moreDetailShow">
+																<p>广告编号:{$v.adnum}</p>
+																<p>广告标题:{$v.adtitle} </p>
+																<p>广告内容:{$v.adtext}</p>
+																<p>推广区域:</p>
+																<p>图片:&nbsp;&nbsp;&nbsp;&nbsp;<img src='{$v.adpic}' /> </p>
+																<p>店铺地址:{$v.address} </p>
+																<p>最新活动:{$v.activity}</p>
+																<p>广告备注:{$v.adremark}</p>
+															</div>
+														</td>
+													</tr>
+												</if>
+											</foreach>
+										</tbody>
+									</table>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- /.col -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.page-content -->
+	<include file="Public/footer" />
+	<include file="Public/footerjs" />
+
+</body>
+
+</html>

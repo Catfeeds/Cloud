@@ -1,0 +1,125 @@
+<include file="Public/head" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/module.css" />
+
+<body class="no-skin">
+    <include file="Public/header" />
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('main-container', 'fixed')
+            } catch (e) {}
+        </script>
+
+        <include file="Public/sidebar" />
+        <div class="main-content">
+            <div class="main-content-inner">
+                <!-- #section:basics/content.breadcrumbs -->
+                <include file="Public/breadcrumbs" />
+
+                <!-- /section:basics/content.breadcrumbs -->
+                <div class="page-content">
+                    <div class="row" style="overflow:hidden">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="row" style="overflow:hidden">
+                                <div class="data-table tableScroll">
+                                    <table cellspacing="0" class="adsListShow  table-striped " style="height:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>操作</th>
+                                                <th>发布时间</th>
+                                                <th>结束时间</th>
+                                                <th>广告名称</th>
+                                                <th>广告类型</th>
+                                                <!--轮播还是顶部滚动-->
+                                                <th>播放位置</th>
+                                                <th>详情页</th>
+                                                <th>轮播次数</th>
+                                                <th>店铺介绍</th>
+                                                <th>电话</th>
+                                                <th>更多详情</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <foreach name="list" item='v'>
+                                                <tr>
+                                                    <td>{$v.adnum}</td>
+                                                    <td>
+                                                        <a href="{:U('adsedit')}?adnum={$v.adnum}">修改</a> |
+                                                        <a href="{:U('adsdel')}?adnum={$v.adnum}">删除</a>
+                                                    </td>
+                                                    <td>{$v.starttime}</td>
+                                                    <td>{$v.endtime}</td>
+                                                    <td>{$v.adname}</td>
+                                                    <!--<td>{$v.adtype}</td>-->
+                                                    <td>
+                                                        <!--console.log({$v.adtype});-->
+                                                        <!--<switch name="$v.adtype">
+                                                            <case value='1'>娱乐</case>
+                                                            <case value="2">养生</case>
+                                                            <case value="3">交通</case>
+                                                            <case value="4">购物</case>
+                                                            <case value="5">健身</case>
+                                                            <case value="6">银行</case>
+                                                            <default />餐饮
+                                                        </switch>-->
+                                                        <if condition="$v.adtype eq 1"> 娱乐
+                                                            <elseif condition="$v.adtype eq 2" />养生
+                                                            <elseif condition="$v.adtype eq 3" />交通
+                                                            <elseif condition="$v.adtype eq 4" />购物
+                                                            <elseif condition="$v.adtype eq 5" />健身
+                                                            <elseif condition="$v.adtype eq 6" />银行
+                                                            <elseif condition="$v.adtype eq 7" />餐饮
+                                                        </if>
+                                                    </td>
+                                                    <td>
+                                                        <if condition="$v.vehicle eq 0"> 轮播
+                                                            <elseif condition="$v.vehicle eq 1" />顶部滚动
+                                                        </if>
+                                                    </td>
+                                                    <td>
+                                                        <if condition="$v.detail eq 0"> 有
+                                                            <elseif condition="$v.detail eq 1" />无
+                                                        </if>
+                                                    </td>
+                                                    <td>{$v.adshowcount}</td>
+                                                    <td>{$v.introduction}</td>
+                                                    <td>{$v.phone}</td>
+                                                    <td class="checkMoreDetail">点我查看
+                                                        <div class="moreDetailShow">
+                                                            <p>广告编号:{$v.adnum}</p>
+                                                            <p>广告标题:{$v.adtitle} </p>
+                                                            <p>广告内容:{$v.adtext}</p>
+                                                            <p>广告备注:{$v.adremark}</p>
+                                                            <p>图片:<img src='{$v.adpic}' /> </p>
+                                                            <p>店铺地址:{$v.address} </p>
+                                                            <p>最新活动:{$v.activity}</p>
+                                                            <p>推广区域:</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </foreach>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <include file="Public/set" />
+
+
+                </div>
+
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.page-content -->
+    <include file="Public/footer" />
+    <include file="Public/footerjs" />
+</body>
+
+</html>

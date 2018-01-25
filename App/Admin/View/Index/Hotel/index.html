@@ -1,0 +1,343 @@
+<include file="Public/head" />
+
+<body class="no-skin">
+    <include file="Public/header" />
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('main-container', 'fixed')
+            } catch (e) {}
+        </script>
+        <include file="Public/sidebar" />
+        <div class="main-content">
+            <div class="main-content-inner">
+                <!-- #section:basics/content.breadcrumbs -->
+                <include file="Public/breadcrumbs" />
+                <!-- /section:basics/content.breadcrumbs -->
+                <div class="page-content">
+
+                    <include file="Public/set" />
+                    <script type="text/javascript" src="__PUBLIC__/Admin/js/changedata.js"></script>
+
+                    <div style="width: auto;height: auto;">
+                        <!-- /section:settings.box -->
+
+                        <!-- left -->
+
+                        <div class="lcontentpage" style="border: 1px solid #8DB6CD;width: 640px;height:210px;float: left;margin: 10px;position: relative;margin-top: 23px;">
+                            <div style="height: 30px;position:absolute;top: 0px;width: 100%;background-color:#8DB6CD;line-height: 30px;padding-left: 10px;color:white; ">
+                                >&nbsp;{$h_name} &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                <input type="button" value="返回" name="" onclick="window.history.back(); " style="height: 20px;width: 40px;margin-top: 7px;line-height: 17px;border: 1px solid white;background-color: transparent;border-radius: 8px;">
+                            </div>
+                            <div style="position: absolute;top: 40px;margin-left: 25px;">
+                                <form action="" method="post">
+                                    &nbsp;&nbsp;查询某日菜品的销量：
+                                    <select name="resname" onchange="" id="sel_1">
+            <option value="0" selected="selected">------请选择菜品------</option>
+            <foreach name="detail" item="v">
+
+              <!-- <option value="Name:{$v.menu_name} Num:{$v.num}">{$v.menu_name}</option> -->
+              <option id="sel_2"  value="{$v.id}">{$v.menu_name}</option>
+            </foreach>
+        </select>
+                                    <input type="date" name="" id="time" autofocus="true" required="true" style="width: 170px;height: 30px;margin-left: 10px;">
+                                    <input type="button" id="timesubmit" value="查询" onclick="test()" style="margin-left: 10px;width:60px; ">
+
+                                    <br /> 
+                                    <hr/>
+                                    &nbsp;&nbsp;查询某段时间菜品的销量：
+                                    <input type="date" name="" id="times" autofocus="true" required="true" style="width: 150px;height: 30px;margin-left: 5px;">
+                                    <input type="date" name="" id="timee" autofocus="true" required="true" style="width: 150px;height: 30px;margin-left: 5px;">
+                                   <input type="button" id="" value="查询" onclick="displaydata()" style="margin-left: 10px;width:60px; ">
+                                   <br />
+                                    <!--<select id="recent-time" style="margin-left: 10px;">
+			                            <option value="a">最近一周</option>
+			                            <option value="b">最近一个月</option>
+			                            <option value="c">最近三个月</option>
+			                            <option value="d">最近半年</option>
+		                                </select>-->
+		                            
+                            </form>
+                            <div style="margin: 5px auto 0;width: 70%;">
+                                <button class="timebutton" id="week" value="a" onclick="aweek()" style="width: 20%;height: 28px;padding: 2px 5px 2px 5px; margin-top: 6px; background: #e0eeee;border-radius: 5px;border: 1px solid #e0eeee;margin-right: 10px;">最近一周</button>
+                                <button class="timebutton" id="1month" value="b" onclick="onemonth()" style="width: 20%;height: 28px;padding: 2px 5px 2px 5px; margin-top: 6px; background: #e0eeee;border-radius: 5px;border: 1px solid #e0eeee; margin-right: 10px;">最近一个月</button>
+                                <button class="timebutton" id="3month" value="c" onclick="threemonth()" style="width: 20%;height: 28px;padding: 2px 5px 2px 5px; margin-top: 6px; background: #e0eeee;border-radius: 5px;border: 1px solid #e0eeee; margin-right: 10px;">最近三个月</button>
+                                <button class="timebutton" id="6month" value="d" onclick="sixmonth()" style="width: 20%;height: 28px;padding: 2px 5px 2px 5px; margin-top: 6px; background: #e0eeee;border-radius: 5px;border: 1px solid #e0eeee; margin-right: 10px;">最近六个月</button>
+                            </div>
+                            </div>
+                            <div>
+
+
+
+                                <div style="display: block;width: 120px;height: 29px;background-color:#8DB6CD;border: 2px solid #E0EEEE; border-radius: 10px;text-align: center;margin-left: 480px;position: absolute;top: 0px;line-height: 30px;"><a href="{:U('displayBox')}" style="color: white;">总体销售详情</a></div>
+                            </div>
+
+                        </div>
+
+                        <!-- 柱状图表部分 -->
+                        <div style="width: 635px;height: 455px;border:1px solid white;position: relative;top: 240px;margin-left: 10px;">
+
+
+
+                            <div id="main" style="width: 620px;height: 450px;position: absolute;top: 40px;margin-left: 10px;">
+                            </div>
+                            <script type="text/javascript" src="__PUBLIC__/Admin/js/echarts.min.js"></script>
+                            <script type="text/javascript">
+                                var myChart = echarts.init(document.getElementById('main'));
+                                var option = {
+
+                                    title: {
+                                        text: '销量前五的菜品的数量及金额',
+                                        left: 'center',
+                                        top: 0,
+                                        textStyle: {
+                                            fontWeight: 'normal',
+                                            color: "#000",
+                                            fontSize: 20
+                                        }
+                                    },
+
+                                    tooltip: {
+                                        trigger: 'axis'
+                                    },
+                                    legend: {
+                                        left: 20,
+                                        top: 30,
+                                        itemGap: 16,
+                                        itemWidth: 18,
+                                        itemHeight: 10,
+                                        data: ['数量', '金额']
+                                    },
+                                    toolbox: {
+                                        show: true,
+                                        feature: {
+                                            dataView: {
+                                                show: true,
+                                                readOnly: false
+                                            },
+                                            magicType: {
+                                                show: true,
+                                                type: ['line', 'bar']
+                                            },
+                                            restore: {
+                                                show: true
+                                            },
+                                            saveAsImage: {
+                                                show: true
+                                            }
+                                        }
+                                    },
+                                    calculable: true,
+                                    xAxis: [{
+                                        type: 'category',
+                                        data: ['{$detail.0.menu_name}', '{$detail.1.menu_name}', '{$detail.2.menu_name}', '{$detail.3.menu_name}', '{$detail.4.menu_name}'],
+                                        position:'bottom',
+                                        axisLabel:{
+                                            interval:0,
+                                            rotate:-30,
+                                        }
+                                    }],
+                                    yAxis: [{
+                                        type: 'value'
+                                    }],
+                                    series: [{
+                                        name: '数量',
+                                        type: 'bar',
+                                        data: ['{$detail.0.num}','{$detail.1.num}','{$detail.2.num}','{$detail.3.num}','{$detail.4.num}'],
+                                        markPoint: {
+                                            data: [{
+                                                type: 'max',
+                                                name: '最大值'
+                                            }, {
+                                                type: 'min',
+                                                name: '最小值'
+                                            }]
+                                        },
+                                        markLine: {
+                                            data: [{
+                                                type: 'average',
+                                                name: '平均值'
+                                            }]
+                                        }
+                                    }, {
+                                        name: '金额',
+                                        type: 'bar',
+                                        data: ['{$detail.0.total}','{$detail.1.total}','{$detail.2.total}','{$detail.3.total}','{$detail.4.total}'],
+
+                                        markLine: {
+                                            data: [{
+                                                type: 'average',
+                                                name: '平均值'
+                                            }]
+                                        }
+                                    }]
+                                };
+                                myChart.setOption(option);
+                            </script>
+                            <!-- <script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jQuery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/examples/syntaxhighlighter/scripts/shCore.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/examples/syntaxhighlighter/scripts/shBrushJScript.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/examples/syntaxhighlighter/scripts/shBrushXml.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/plugins/jqplot.logAxisRenderer.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/plugins/jqplot.canvasTextRenderer.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/plugins/jqplot.canvasAxisLabelrenderer.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/plugins/jqplot.dateAxisRenderer.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/plugins/jqplot.barRenderer.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/plugins/jqplot.pointLabels.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/plugins/jqplot.dateaxisRenderer.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/jqplot/plugins/jqplot.dateaxisRenderer.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/zhu/m_jqplot.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/js/jqplot/jquery.jqplot.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/js/jqplot/examples/syntaxhighlighter/styles/shCoreDefault.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/js/jqplot/examples/syntaxhighlighter/styles/shThemejqplotPlot.min.css">
+
+<script type="text/javascript">
+    var data = [[24,15,36,27,38,29],[73,46,58,61,41]];
+    var data_max = 100; //Y轴最大刻度
+    var line_title = ["销量","销售额"]; //曲线名称
+    var y_label = "数值"; //Y轴标题
+    var x_label = "菜名"; //X轴标题
+    var x = ["红烧肉","羊肉串","水煮鱼","拍黄瓜","金针菇炒蛋"]; //定义X轴刻度值
+    var title = "这是标题"; //统计图标标题
+    j.jqplot.diagram.base("chart2", data, line_title, "这是销量前五菜品的销量和销售额", x, x_label, y_label, data_max, 2);
+</script> -->
+
+
+                        </div>
+                        <script type="text/javascript">
+                            	
+                            function test() {
+                                
+                                var h_id = document.getElementById('h_id').value;
+                                var menu_id=document.getElementById('sel_1').value;
+                                var menu_name=document.getElementById('sel_2').innerHTML;
+                                var time=document.getElementById('time').value;
+                                console.log(h_id);
+                                console.log(menu_name);
+                                console.log(menu_id);
+                                console.log(time);
+                                 $.ajax({
+                                    type: "post",
+                                    dataType: "json",
+                                    data: {
+                                        h_id: h_id,
+                                        menu_id:menu_id,
+                                        time:time
+                                    },
+                                    url: "displaySingle",
+                                    success: function(data) {
+                                        console.log(data);
+                                        var msg = " ";
+                                        msg += menu_name;
+                                        msg += "　" + time;
+                                        msg += "\n销售量为:";
+                                        msg += data[0].num;
+                                        msg += "\n销售额为:";
+                                        msg += data[0].total;
+                                        alert(msg);
+                                     },
+                                     error: function() {
+                                            alert(111);
+                                        }
+                          });
+                     }
+                        </script>
+                    </div>
+                </div>
+
+
+
+                <!-- right -->
+
+                <div class="rcontentpage" style="border:1px solid rgb(74,157,99); width: 500px;height: 680px;margin-left: 690px;position: relative;margin-top: -455px;">
+                    <div style="height: 30px;position:absolute;top: 0px;width: 100%;background-color: rgb(77,159,103);line-height: 30px;padding-left: 10px;color:white; ">
+                        >&nbsp;销售详情
+                    </div>
+                    <div style="overflow: scroll;height:635px;position: absolute;top: 30px; ">
+                        <table style="border: 1px solid gray;margin: 15px;width: 465px;height: 590px;">
+                            <thead>
+                                <tr style="background-color: rgb(248,248,248);border : 1px solid white;">
+                                    <td>菜品</td>
+                                    <td class="numtd">数量&nbsp;<span class="triangle-up"></span>
+                                    	<div class="numsort">
+                                    		<ul>
+                                    			<li onclick="numsorttop()">销量从高到低</li>
+                                    			<li onclick="numsortlow()">销量从低到高</li>
+                                    		</ul>
+                                    	</div>
+                                    </td>
+                                    <td>单价</td>
+                                    <td class="numtd">总销售额&nbsp;<span class="triangle-up"></span>
+                                    	<div class="pricesort">
+                                    		<ul>
+                                    			<li onclick="pricesorttop()">总销售额从高到低</li>
+                                    			<li onclick="pricesortlow()">总销售额从低到高</li>
+                                    		</ul>
+                                    	</div>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody id='saleDetail'>
+                                <foreach name="detail" item="v">
+                                    <tr>
+                                        <td>{$v.menu_name}</td>
+                                        <td>{$v.num}</td>
+                                        <td>{$v.price}</td>
+                                        <td>{$v.total}</td>
+                                    </tr>
+                                </foreach>
+                            </tbody>
+                        </table>
+                        <input type="text" id="h_id" value="{$h_id}" style="display: none;">
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+            <!-- bottom -->
+
+
+
+
+
+
+        </div>
+
+
+
+        <!--  <div class="rcontentpage">
+                        <div class="rtopcontent">>&nbsp;&nbsp;统计图表</div>
+                            <div class="autocontent">
+
+
+                            </div> 
+                        </div>
+                    </div>
+             
+                -->
+
+
+
+
+        <!-- /.row -->
+    </div>
+
+    <!-- /.page-content -->
+    </div>
+    </div>
+    <!-- /.main-content -->
+    <include file="Public/footer" />
+    </div>
+    <!-- /.main-container -->
+    <include file="Public/footerjs" />
+    <!-- inline scripts related to this page -->
+</body>
+
+</html>

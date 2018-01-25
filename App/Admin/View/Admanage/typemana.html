@@ -1,0 +1,64 @@
+<include file="Public/head" />
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/module.css" />
+
+<body class="no-skin">
+    <include file="Public/header" />
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('main-container', 'fixed')
+            } catch (e) {}
+        </script>
+
+        <include file="Public/sidebar" />
+        <div class="main-content">
+            <div class="main-content-inner">
+                <!-- #section:basics/content.breadcrumbs -->
+                <include file="Public/breadcrumbs" />
+
+                <!-- /section:basics/content.breadcrumbs -->
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="data-table table-striped">
+                                <table class="">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>类型名称</th>
+                                            <th>备注</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <foreach name="Ads_type" item="v">
+                                            <tr>
+                                                <td>{$v.typenum}</td>
+                                                <td>{$v.typename}</td>
+                                                <td>{$v.remark}</td>
+                                                <td><a href="{:U('edit')}?typenum={$v.typenum}">编辑</a>|
+                                                    <a href="{:U('del')}?typenum={$v.typenum}">删除</a>
+                                                </td>
+                                            </tr>
+                                        </foreach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <include file="Public/set" />
+
+
+                </div>
+                <include file="Public/footer" />
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.page-content -->
+    <include file="Public/footerjs" />
+</body>
+
+</html>

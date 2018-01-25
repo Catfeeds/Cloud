@@ -1,0 +1,160 @@
+<include file="Public/head" />
+
+<body class="no-skin">
+	<include file="Public/header" />
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+			try {
+				ace.settings.check('main-container', 'fixed')
+			} catch(e) {}
+		</script>
+
+		<include file="Public/sidebar" />
+		<div class="main-content">
+			<div class="main-content-inner">
+				<!-- #section:basics/content.breadcrumbs -->
+				<include file="Public/breadcrumbs" />
+
+				<!-- /section:basics/content.breadcrumbs -->
+				<div class="page-content">
+					<include file="Public/set" />
+
+					<!-- /section:settings.box -->
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<form class="form-horizontal" id="form" method="post" action="{:U('addHotel')}">
+								<div class="space-4"></div>
+								<div class="form-group">
+									<label class="col-sm-1 control-label no-padding-right" for="form-field-4"> 餐厅名称 </label>
+									<div class="col-sm-9">
+										<input type="text" name="h_name" id="v" placeholder="" class="col-xs-10 col-sm-5" value="">
+										<span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+										</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-1 control-label no-padding-right" for="form-field-4"> 餐厅编号</label>
+									<div class="col-sm-9">
+										<input type="text" name="h_code" id="v" placeholder="" class="col-xs-10 col-sm-5" value="">
+										<span class="help-inline col-xs-12 col-sm-7">
+                        <span class="middle"></span>
+										</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-1 control-label no-padding-right" for="form-field-4"> 餐厅地址</label>
+									<div class="col-sm-9">
+										<!--新增省市区联动-->
+										<!--<div data-toggle="distpicker">
+											<table border="0" cellspacing="" cellpadding="">
+												<tr>
+													<td><label class="sr-only" for="province2">Province</label>
+														<select class="form-control" id="h_province" name="h_province" data-province="---- 选择省 ----"></select>
+													</td>
+													<td><label class="sr-only" for="city2">City</label>
+														<select class="form-control" id="h_city" name="h_city" data-city="---- 选择市 ----"></select>
+													</td>
+													<td><label class="sr-only" for="district2">District</label>
+														<select class="form-control" id="h_district" name="h_district" data-district="---- 选择区 ----"></select>
+													</td>
+												</tr>
+											</table>
+										</div>-->
+										<select name="h_province"></select>
+										<select name="h_city"></select>
+										<select name="h_district"></select><br>
+										
+									</div>
+								</div>
+								<div class="form-group">
+									
+									<label class="col-sm-1 control-label no-padding-right" for="form-field-4">详细地址</label>
+									<div class="col-sm-9">
+										<input type="text" name="h_add" id="v" placeholder="" class="col-xs-10 col-sm-5" value="">
+										<span class="help-inline col-xs-12 col-sm-7">
+                        <span class="middle"></span>
+										</span>
+										</div>
+								</div>
+
+								<div class="col-md-offset-2 col-md-9">
+									<button class="btn btn-info submit" type="button">
+                                    <i class="icon-ok bigger-110"></i>
+                                    增加
+                                </button> &nbsp; &nbsp; &nbsp;
+									<button class="btn" type="reset">
+                                    <i class="icon-undo bigger-110"></i>
+                                    重置
+                                </button>
+								</div>
+							</form>
+							<!-- PAGE CONTENT ENDS -->
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.page-content -->
+			</div>
+		</div>
+		<!-- /.main-content -->
+		<include file="Public/footer" />
+
+	</div>
+	<!-- /.main-container -->
+
+	<include file="Public/footerjs" />
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript">
+		$(function() {
+			$(".btn-info.submit").click(function() {
+				var webname = $("#webname").val();
+				var url = $("#url").val();
+				if(webname == 0) {
+					bootbox.dialog({
+						title: '友情提示：',
+						message: "标题必须选择。",
+						buttons: {
+							"success": {
+								"label": "确定",
+								"className": "btn-danger"
+							}
+						}
+					});
+					return;
+				}
+				if(url == '') {
+					bootbox.dialog({
+						title: '友情提示：',
+						message: "链接地址必须填写。",
+						buttons: {
+							"success": {
+								"label": "确定",
+								"className": "btn-danger"
+							}
+						}
+					});
+					return;
+				}
+				$("#form").submit();
+			});
+		});
+	</script>
+	<!--省市区联动插件-->
+	<!--<script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+	<script src="__PUBLIC__/Admin/js/jQueryDistpicker/js/distpicker.data.js"></script>
+	<script src="__PUBLIC__/Admin/js/jQueryDistpicker/js/distpicker.js"></script>
+	<script src="__PUBLIC__/Admin/js/jQueryDistpicker/js/main.js"></script>-->
+	<script type="text/javascript" src="__PUBLIC__/Admin/js/pdjQuery/PCASClass.js"></script>
+			
+	<script language="javascript" defer>
+
+new PCAS("h_province","h_city","h_district");
+
+</script>
+</body>
+
+</html>

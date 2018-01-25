@@ -1,0 +1,225 @@
+<include file="Public/head" />
+
+<body class="no-skin">
+    <include file="Public/header" />
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('main-container', 'fixed')
+            } catch (e) {}
+        </script>
+
+        <include file="Public/sidebar" />
+        <div class="main-content">
+            <div class="main-content-inner">
+                <!-- #section:basics/content.breadcrumbs -->
+                <include file="Public/breadcrumbs" />
+
+                <!-- /section:basics/content.breadcrumbs -->
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="row">
+                                <form action="{:U('adsedit')}" method="post" class="form-horizontal" enctype="multipart/form-data">
+                                    <div class="form-item">
+
+                                        <!-- <label class="item-label">广告ID<span class="check-tips"></span></label> -->
+                                        <div class="controls">
+                                            <input type="hidden" class="text input-mid" name="adnum" value="{$list['adnum']}" />
+                                        </div>
+                                        <label class="item-label">广告名称<span class="check-tips"></span></label>
+                                        <!--<div class="controls">-->
+                                        <input type="text" class="text input-mid" name="adname" value="{$list['adname']}" /><br />
+                                        <!--</div>-->
+                                        <label class="item-label">开始时间<span class="check-tips"></span></label>
+                                        <!--<div class="controls">-->
+                                        <input type="date" class="text input-mid" name="starttime" value="{$list['starttime']}" />
+                                        <!--</div>-->
+                                        <label class="item-label">结束时间<span class="check-tips"></span></label>
+                                        <!-- <div class="controls">-->
+                                        <input type="date" class="text input-mid" name="endtime" value="{$list['endtime']}" /><br />
+                                        <!--</div>-->
+                                        <label class="item-label">广告内容<span class="check-tips"></span></label>
+                                        <!--<div class="controls">-->
+                                        <!-- <input type="text" class="text input-mid" name="adtext" value="{$list['introduction']}"/> -->
+                                        <textarea name="adtext" placeholder="这里输入内容" style="width:300px;height:80px; vertical-align: text-top;">{$list['adtext']}</textarea>
+                                        <br />
+
+                                        <!--</div>-->
+                                        <label class="item-label">广告备注<span class="check-tips"></span></label>
+                                        <!--<div class="controls">-->
+                                        <input type="text" class="text input-mid" name="adremark" value="{$list['adremark']}" />
+                                        <!--</div>-->
+
+                                        <table border="0">
+                                            <tr>
+                                                <td><label class="item-label">广告图片　<span class="check-tips"></span></label></td>
+                                                <td>
+                                                    <input type="file" name="test" value="{$list['adpic']}" />
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+                                        <label class="item-label">广告链接<span class="check-tips"></span></label>
+                                        <!--<div class="controls">-->
+                                        <input type="text" class="text input-mid" name="adhref" value="{$list['adhref']}" />
+                                        <!--</div>-->
+                                        <label class="item-label">广告标题<span class="check-tips"></span></label>
+                                        <!--<div class="controls">-->
+                                        <input type="text" class="text input-mid" name="adtitle" value="{$list['adtitle']}" /><br />
+                                        <!--</div>-->
+
+
+
+
+                                        <label class="item-label">广告类型<span class="check-tips"></span></label>
+                                        <!--<div class="controls">-->
+                                        <!-- <input type="text" class="text input-mid" name="adtype" value="{$list['adtype']}" /> -->
+                                        <select id="adtype" name="adtype">
+
+
+                                            <volist name="types" id="v">
+                                                <eq name="list['adtype']" value="$v.typename">
+                                                <option value="{$v.typenum}" selected="selected">{$v.typename}</option>
+                                                <else/>
+                                                <option value="{$v.typenum}">{$v.typename}</option>
+                                            </eq>
+											</volist>
+                                        </select>
+                                        <br/>
+
+
+                                        <!--</div>-->
+
+
+                                        <label class="item-label">店铺介绍<span class="check-tips"></span></label>
+                                        <!--<div class="controls">-->
+                                        <textarea name="introduction" placeholder="这里输入内容" style="width:300px;height:80px;">{$list['introduction']}</textarea>
+                                        <br />
+
+                                        <!--</div>-->
+                                        <label class="item-label">最新活动<span class="check-tips"></span></label>
+                                        <!-- <div class="controls">-->
+                                        <input type="text" class="text input-mid" name="activity" value="{$list['activity']}" /><br />
+                                        <!--</div>-->
+                                        <table border="0" cellspacing="" cellpadding="">
+                                            <tr>
+                                                <th><label class="item-label">推广餐厅<span class="check-tips"></span></label></th>
+                                                <td>
+                                                    <select style="margin-left:9px;" id="orgChooseBtn" name="orgChooseBtn">
+                                                        <option id="allorg">全部连锁机构</option>
+                                                        <option id="psnorg">自选连锁机构</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <!-- <div class="areaChoose"> -->
+                                                    <!-- <label class="item-label" style="float:left">选择区域<span class="check-tips"></span></label> -->
+                                                    <!-- <div id="areas"> -->
+                                                    <select name="province" id="province" style="margin-left:9px;"></select>
+                                                    <select name="city" id="city"></select>
+                                                    <select name="area" id="district"></select>
+                                                    <!-- </div> -->
+                                                    <!-- </div> -->
+                                                </td>
+                                                <td>
+
+                                                    <button class="btn submit-button mybtn" type="button" id="chooseHotelBtn">查询餐厅</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div id="hotel">
+                                            <div class="" id="orgDisplayChoose">
+                                                <div id="orgShow">
+                                                    <div id="selectAll">
+                                                        <input type="checkbox" id="orgAllChoose" name="orgAllChoose">全选
+                                                    </div>
+                                                    <ul id="orgShowList">
+                                                    </ul>
+                                                </div>
+
+                                                <div class="btnDiv">
+                                                    <button type="button" class="btn mybtn2" id="cancelBtn1">取消</button>
+                                                    <button class="btn mybtn2" type="button" id="confirmOrgChoose">确定</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="" id="hotelDisplayChoose">
+                                                <div id="hotelShow">
+                                                    <div id="selectAll">
+                                                        <input type="checkbox" id="hotelAllChoose" name="hotelAllChoose">全选
+                                                    </div>
+                                                    <ul id="hotelShowList">
+                                                    </ul>
+                                                </div>
+                                                <!-- <div class="btnDiv"> -->
+                                                <!-- <button class="btn mybtn" type="button" id="confirmBtn">确定</button> -->
+                                                <!-- <button type="button" class="btn mybtn2" id="cancelBtn2">取消</button> -->
+                                                <!-- </div> -->
+                                            </div>
+                                            <div class="" id="selectedHotel">
+                                                <p>已选餐厅</p>
+                                                <div id="slHotelShow">
+                                                    <ol id="slHotelShowList">
+                                                    </ol>
+                                                </div>
+                                                <div class="btnDiv">
+                                                    <button type="button" class="btn mybtn2" id="cancelBtn3">取消</button>
+                                                    <button class="btn mybtn2" type="button" id="confirmBtn">确定</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <input id="storeOrgId" name="storeOrgId" style="display:none;" />
+                                        <input id="storeHotelId" name="storeHotelId" style="display:none;" />
+                                        <input id="is_submit" name="is_submit" style="display:none" />
+
+                                        <input id="selectedHotelId" style="display:none" value="{$list['ad_hotel']}" />
+
+                                        <!--</div>-->
+                                        <label class="item-label">电话<span class="check-tips"></span></label>
+                                        <!--<div class="controls">-->
+                                        <input type="text" class="text input-mid" name="phone" value="{$list['phone']}" /><br />
+                                        <!-- </div>-->
+
+                                        <label class="item-label">选择播放的位置　<span class="check-tips"></span></label>
+                                        <!--<div class="controls">-->
+                                        <!--  <input type="radio" name="vehicle" value="0">轮播广告-->
+                                        <input type="checkbox" id="vehicle" name="vehicle" value="1">滚动条广告<br />
+                                        <!--</div>-->
+
+                                        <label class="item-label">详情页展示　<span class="check-tips"></span></label>
+                                        <!-- <div class="controls">-->
+                                        <input type="checkbox" id="detail" name="detail" value="0">是
+                                        <!--</div>
+            -->
+                                    </div>
+
+                                    <div class="form-item">
+                                        <button class="btn submit-btn" type="submit">确 定</button>
+                                        <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+                                    </div>
+                                </form>
+                                <include file="Public/set" />
+                                <include file="Public/footer" />
+
+                            </div>
+
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.page-content -->
+                <include file="Public/footerjs" />
+                <script type="text/javascript" src="__PUBLIC__/Admin/js/pdjQuery/PCASClass.js"></script>
+
+                <script language="javascript" defer>
+                    new PCAS("province", "city", "area");
+                </script>
+                <script src="__PUBLIC__/Admin/js/addinput.js"></script>
+                <script src="__PUBLIC__/Admin/js/hotelchoose.js"></script>
+</body>
+
+</html>

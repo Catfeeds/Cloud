@@ -1,0 +1,309 @@
+<include file="Public/head" />
+
+
+<body class="no-skin">
+
+  <include file="Public/header" />
+  <div class="main-container" id="main-container">
+    <script type="text/javascript">
+      try {
+        ace.settings.check('main-container', 'fixed')
+      } catch (e) {}
+    </script>
+
+    <include file="Public/sidebar" />
+    <div class="main-content">
+      <div class="main-content-inner">
+        <!-- #section:basics/content.breadcrumbs -->
+        <include file="Public/breadcrumbs" />
+
+        <!-- /section:basics/content.breadcrumbs -->
+        <div class="page-content">
+
+          <include file="Public/set" />
+
+          <!-- /section:settings.box -->
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- PAGE CONTENT BEGINS -->
+              <div class="row">
+
+                <div id="accordion-sysinfo" class="accordion-style1 panel-group col-sm-3" style="width: 650px;">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                                            <a class="accordion-toggle" data-toggle="collapse"
+                                               data-parent="#accordion-sysinfo" href="#sysinfo">
+                                                <i class="ace-icon fa fa-angle-down bigger-110"
+                                                   data-icon-hide="ace-icon fa fa-angle-down"
+                                                   data-icon-show="ace-icon fa fa-angle-right"></i>
+                                                &nbsp;分店名称
+                                            </a>
+                                        </h4>
+                    </div>
+
+                    <div class="panel-collapse collapse in" id="sysinfo">
+                      <div class="panel-body">
+                        <volist name="hotelList" id="v">
+                          <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$v["h_name"]}&nbsp;&nbsp;&nbsp;<a href="{:U('displayHotel')}?h_id={$v['id']}" style="text-decoration: underline;" class="look">进入查看</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          </p>
+                        </volist>
+                  
+
+
+                        <hr>
+                        <div>
+                          <div class="bt1" style="float: left;height:70px;width: 150px;border: 4px solid white;margin-right: 20px;margin-left: 35px;margin-bottom: 10px;color: white;border-radius: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;销量最好的菜
+                            <p style="text-align: center;font-size: 16px;font-weight: bold;color: #515151;">{$mostDish[0]['menu_name']}</p>
+                          </div>
+                          <span class="bt2" style="float: left;height:70px;width: 150px;border: 4px solid white;margin-right: 20px;margin-bottom: 10px;color: white;border-radius: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;销量最好的分店
+                                                   <p style="text-align: center;font-size: 16px;font-weight: bold;color: #515151;">{$mostHotal[0]['h_name']}</p>
+                                                    </span>
+                          <span class="bt3" style="float: left;height:70px;width: 150px;border: 4px solid white;margin-right: 20px;margin-bottom: 10px;color: white;border-radius: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;销量最差的菜
+                                                    <p style="text-align: center;font-size: 16px;font-weight: bold;color: #515151;">{$lastDish[0][menu_name]}</p>
+                                                    </span>
+                        </div>
+
+                        <div>
+                          <span class="bt4" style="float: left;height:70px;width: 150px;border: 4px solid white;margin-right: 20px;margin-left: 35px;color: white;border-radius: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;比上月销售额增长
+                                                    <p style="text-align: center;font-size: 16px;font-weight: bold;color: #515151;">13%</p></span>
+                          <span class="bt5" style="float: left;height:70px;width: 150px;border: 4px solid white;margin-right: 20px;color: white;border-radius: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;销量最差的分店
+                                                   <p style="text-align: center;font-size: 16px;font-weight: bold;color: #515151;">{$lastHotal[0][h_name]}</p></span>
+                          <span class="bt6" style="float: left;height:70px;width: 150px;border: 4px solid white;margin-right: 20px;color: white;border-radius: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;销量锐增的菜品
+                                                   <p style="text-align: center;font-size: 16px;font-weight: bold;color: #515151;">羊肉串</p></span>
+                        </div>
+
+                      </div>
+
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id="accordion" class="accordion-style1 panel-group col-sm-5" style="position: relative;top: 0px;left: 0px;
+                               width: 1120px; ">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapseOne">
+                                                <i class="ace-icon fa fa-angle-down bigger-110"
+                                                   data-icon-hide="ace-icon fa fa-angle-down"
+                                                   data-icon-show="ace-icon fa fa-angle-right"></i>
+                                                &nbsp;销售统计信息
+                                            </a>
+                                        </h4>
+                  </div>
+                  <div style="clear: both;"></div>
+                  <div class="panel-collapse collapse in" id="collapseOne">
+                    <div id="officialnews" class="panel-body">
+                      <table style="width: 1050px;height:200px; ">
+                        <thead>
+                          <tr style="background-color: rgb(248,248,248);">
+                            <td>店名：</td>
+                            <td id="month1">一月份</td>
+                            <td id="month2">二月份</td>
+                            <td id="month3">三月份</td>
+                            <td id="month4">四月份</td>
+                            <td id="month5">五月份</td>
+                            <td id="month6">六月份</td>
+                            <td id="month7">七月份</td>
+                            <td id="month8">八月份</td>
+                            <td id="month9">九月份</td>
+                            <td id="month10">十月份</td>
+                            <td id="month11">十一月份</td>
+                            <td id="month12">十二月份</td>
+                            <td id="he">合计</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <foreach name="orgInfo" item="v">
+                            <tr style="background: #dbdbdb;border:4px solid white;">
+                              <td>{$v.h_name}</td>
+                              <td>{$v.month01}</td>
+                              <td>{$v.month02}</td>
+                              <td>{$v.month03}</td>
+                              <td>{$v.month04}</td>
+                              <td>{$v.month05}</td>
+                              <td>{$v.month06}</td>
+                              <td>{$v.month07}</td>
+                              <td>{$v.month08}</td>
+                              <td>{$v.month09}</td>
+                              <td>{$v.month10}</td>
+                              <td>{$v.month11}</td>
+                              <td>{$v.month12}</td>
+                              <td>{$v.total}</td>
+                            </tr>
+                          </foreach>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="Facebook-info" class="accordion-style1 panel-group col-sm-4" style="position: absolute;left: 650px;top:0px;width: 485px;">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                                            <a class="accordion-toggle" data-toggle="collapse"
+                                               data-parent="#Facebook-info" href="#Facebook">
+                                                <i class="ace-icon fa fa-angle-down bigger-110"
+                                                   data-icon-hide="ace-icon fa fa-angle-down"
+                                                   data-icon-show="ace-icon fa fa-angle-right"></i>
+                                                &nbsp;菜品销售比例图
+                                            </a>
+                                        </h4>
+                  </div>
+
+                  <div class="panel-collapse collapse in" id="Facebook">
+                    <div class="panel-body">
+                      <div style="text-align:center;clear:both;padding:0px;margin: 0px;">
+                      </div>
+                      <div style="margin:0 auto;">
+                        <script type="text/javascript" src="__PUBLIC__/Admin/js/Statistics/jquery-1.11.2.js"></script>
+                        <script type="text/javascript" src="__PUBLIC__/Admin/js/Statistics/jsapi.js"></script>
+                        <script type="text/javascript" src="__PUBLIC__/Admin/js/Statistics/corechart.js"></script>
+                        <script type="text/javascript" src="__PUBLIC__/Admin/js/Statistics/jquery.gvChart-1.0.1.min.js"></script>
+                        <script type="text/javascript" src="__PUBLIC__/Admin/js/Statistics/jquery.ba-resize.min.js"></script>
+
+                        <script type="text/javascript">
+                          gvChartInit();
+                          $(document).ready(function() {
+                            $('#myTable5').gvChart({
+                              chartType: 'PieChart',
+                              gvSettings: {
+                                vAxis: {
+                                  title: 'No of players'
+                                },
+                                hAxis: {
+                                  title: 'Month'
+                                },
+                                width: 430,
+                                height: 290
+                              }
+                            });
+                          });
+                        </script>
+                        <table id='myTable5'>
+
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>{$mostDish[0][menu_name]}</th>
+                              <th>{$mostDish[1][menu_name]}</th>
+                              <th>{$mostDish[2][menu_name]}</th>
+                              <th>{$mostDish[3][menu_name]}</th>
+                              <th>{$mostDish[4][menu_name]}</th>
+                              <th>{$mostDish[5][menu_name]}</th>
+                              <th>其它</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th></th>
+                              <td>{$mostDish[0][nums]}</td>
+                              <td>{$mostDish[1][nums]}</td>
+                              <td>{$mostDish[2][nums]}</td>
+                              <td>{$mostDish[3][nums]}</td>
+                              <td>{$mostDish[4][nums]}</td>
+                              <td>{$mostDish[5][nums]}</td>
+                              <td>{$extra[0][nums]}</td>
+
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+            <!-- PAGE CONTENT ENDS -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.page-content -->
+    </div>
+  </div>
+  <!-- /.main-content -->
+
+  <include file="Public/footer" />
+
+  </div>
+  <!-- /.main-container -->
+
+  <include file="Public/footerjs" />
+  <!-- inline scripts related to this page -->
+
+<!--   <script type="text/javascript">
+    $(function() {
+
+      $("#officialnews ul").html('<div class="ace-icon fa fa-spinner fa-spin orange"></div>');
+      $.ajax({
+        type: 'GET',
+        url: '{$Think.CONFIG.NEWS_URL}?callback=?',
+        success: function(data) {
+          $("#officialnews ul").html("");
+          $.each(data.news, function(i, news) {
+            $("#officialnews ul").append("<li>" + news.pre + "<a href=\"" + news.url + "\" title=\"" + news.title + "\" target=\"_blank\">" + news.title + "</a>" + news.time + "</li>");
+          });
+        },
+        error: function() {
+          $("#officialnews ul").html("");
+        },
+        dataType: 'json'
+      });
+
+      $("#update").click(function() {
+
+        $("#upmsg").html("");
+        $("#upmsg").addClass("ace-icon fa fa-refresh fa-spin blue");
+        $.ajax({
+          type: 'GET',
+          url: '{$Think.CONFIG.UPDATE_URL}?v={$Think.CONFIG.Version}&callback=?',
+          success: function(json) {
+            if (json.result == 'no') {
+              $("#upmsg").html("目前还没有适合您当前版本的更新！").removeClass();
+            } else if (json.result == 'yes') {
+              $("#upmsg").html("检查到新版本 " + json.ver + "，请前往“系统设置”->“<a  href=\"{:U('Update/update')}\">在线升级</a>”").removeClass();
+            }
+          },
+          error: function() {
+            $("#upmsg").html("悲剧了，网络故障，请稍后再试！").removeClass();
+          },
+          dataType: 'json'
+        });
+
+      });
+    })
+    $(function() {
+      $(".btn-info.submit").click(function() {
+        var content = $("#content").val();
+        if (content == '') {
+          bootbox.dialog({
+            title: '友情提示：',
+            message: "反馈内容必须填写。",
+            buttons: {
+              "success": {
+                "label": "确定",
+                "className": "btn-danger"
+              }
+            }
+          });
+          return;
+        }
+
+        $("#form").submit();
+      });
+    });
+  </script> -->
+</body>
+
+</html>
