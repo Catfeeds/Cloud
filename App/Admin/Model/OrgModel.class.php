@@ -59,10 +59,11 @@ class OrgModel extends Model{
       // dump($_SESSION);
       $uid = $_SESSION["uid"];
       $user = M("auth_group_access")->where("uid = ".$uid)->find();
+      $member = M("member")->where("uid = ".$uid)->find();
       // dump($user);
       if($user["group_id"]==1) return 1;
       else if($user["group_id"]==10) return 2;
-      else if($user["group_id "]!=1&&$user["group_id"]!==10&&$user["h_id"]==0) return 3;
+      else if($user["group_id "]!=1&&$user["group_id"]!==10&&$member["h_id"]==0) return 3;
       else return 4;
     }
     public function getHotleByOrgId($org_id){

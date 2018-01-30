@@ -23,7 +23,9 @@ class IndexController extends ComController
       $lastDish = D('Statis')->getLastDish(1);
       $lastHotal = D('Statis')->getLastHotel(2, 1);
       $hotelList = D('Org')->getHotleByOrgId($_SESSION["org_id"]);
-      
+      $h_id = $_SESSION["h_id"];
+      //dump($hotelList);die;
+      //dump($_SESSION);die;
       // $this->assign('hotelDaily',$hotelDaily);
       $this->assign('lastDish', $lastDish);
       $this->assign('mostHotal', $mostHotal);
@@ -33,6 +35,8 @@ class IndexController extends ComController
       $this->assign('lastHotal', $lastHotal);
       $this->assign('extra', $extra);
       $this->assign('hotelList', $hotelList);
+      //$this->assign('h_id', $h_id);
+      //dump($h_id);die;
       // dump($hotelList);die;
       // dump($extra);die;
 
@@ -47,7 +51,7 @@ class IndexController extends ComController
       //$this->display("Index/Org/index");
       // $this->display("Index/Hotel/index");
         $role = D("Org")->user_role();
-        // dump($role);
+        //dump($role);die;
         // dump($ans);
         switch ($role) {
           case '1':
@@ -69,6 +73,20 @@ class IndexController extends ComController
           default:
             // $data = self::getHotelData();
             $this->assign("data",$data);
+            $year = date("Y",time());
+            $nextYear = $year+1;
+            $startTime = strtotime("1 January $year");
+            $endTime = strtotime("1 January $nextYear");
+            // $hotelDaily = D('Statis')->getTotalByMonthByHotel($h_id,13,06);
+            $detail = D('Statis')->getDetailByHotel($h_id,$startTime,$endTime);
+            $h_name = M('hotel')->field("h_name")->where("id = $h_id")->find();
+            $h_name = $h_name['h_name'];
+            $this->assign('detail', $detail);
+            // dump($detail);die();
+            $this->assign('h_name',$h_name);
+            $this->assign('h_id',$h_id);
+            $this->assign('hotelDaily',$hotelDaily);
+            // dump($hotelDaily);die();
             $this->display("Index/Hotel/index");
             break;
         }
@@ -101,6 +119,7 @@ class IndexController extends ComController
    */
   public function displayHotel(){
     $h_id = $_GET['h_id'];
+    //dump($h_id);die;
     $year = date("Y",time());
     $nextYear = $year+1;
     $startTime = strtotime("1 January $year");
