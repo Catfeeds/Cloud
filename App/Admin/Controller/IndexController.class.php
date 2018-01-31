@@ -182,7 +182,7 @@ class IndexController extends ComController
 
       case 'e':
         $startTime = strtotime($times);
-        $endTime = strtotime($timee);
+        $endTime = strtotime($timee)+86400;
         break;
 
       default:
